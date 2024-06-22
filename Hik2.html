@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hikmath Portfolio</title>
+<link rel="icon" type="image/png" href="hik.png">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet"> <!-- Added a stylish font -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+  body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    scroll-behavior: smooth; /* Smooth scrolling for all browsers */
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between; /* Space between the logo and the navigation */
+    align-items: center;
+    padding: 20px 40px;
+    background-image: url('Website-Design-Background.png');
+    background-color: #996c8d;
+    position: relative;
+  }
+
+  .portfolio-title {
+    font-family: inherit; /* Using the stylish font */
+    font-size: 36px;
+    color: #pink;
+  }
+
+  header nav {
+    display: flex;
+    gap: 30px;
+  }
+
+  header nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer; /* Ensure pointer cursor for better UX */
+  }
+
+  header nav a:hover {
+    color: #ff004c;
+  }
+
+  .hero {
+    display: flex;
+    justify-content: space-between;
+    background-image: url('Website-Design-Background.png');
+    background-color: #171717;
+    padding: 100px 50px;
+    flex-wrap: wrap;
+  }
+
+  .hero-text {
+    max-width: 600px;
+  }
+
+  .hero-text h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+    margin-top: -20px;
+  }
+
+  .hero-text h1 span {
+    color: #fff;
+  }
+
+  .hero-text h3 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    margin-top: 100px;
+    font-family: cursive;
+  }
+
+  .hero-text h5 {
+    font-size: 18px;
+    margin-bottom: 40px;
+    margin-top: -20px;
+    font-family: revert;
+    color: gold;
+  }
+
+  .hero-text p {
+    font-size: 18px;
+    margin-bottom: 40px;
+  }
+
+
+  .social-links {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+
+  .social-links a {
+    color: #fff;
+    font-size: 24px;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 20px;
+  }
+
+  .buttons a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+  }
+
+  .buttons .hire-me {
+    background-color: #ff004c;
+  }
+
+  .buttons .portfolio {
+    border: 1px solid #fff;
+  }
+
+  .hero img {
+    max-width: 35%;
+    height: auto;
+    flex: 1;
+    margin-left: 20px;
+  }
+
+  .about {
+    padding: 50px 40px;
+    background-color: #242424;
+    color: #fff;
+    text-align: left;
+    opacity: 0; /* Start hidden */
+    transform: translateX(-50px); /* Start with a leftward transform */
+    transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out; /* Add transition for smooth animation */
+    position: relative; /* Added for positioning the line */
+  }
+
+  .about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -30px; /* Adjust as needed */
+    width: 2px;
+    height: 100%;
+    background-color: gold; /* Changed line color to gold */
+  }
+
+  .experience {
+    padding: 50px 30px;
+    background-color: #363636;
+    color: #fff;
+    text-align: left;
+    opacity: 0; /* Start hidden */
+    transform: translateX(-50px); /* Start with a leftward transform */
+    transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out; /* Add transition for smooth animation */
+    position: relative; /* Added for positioning the lines */
+    margin-top: auto; /* Added to separate sections */
+  }
+
+  .experience::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -30px; /* Adjust as needed */
+    width: 2px;
+    height: 100%;
+    background-color: gold; /* Changed line color to gold */
+  }
+
+  .experience h3 {
+    margin-top: 20px; /* Adjusted margin */
+  }
+
+  .experience h2 {
+    margin-top: 20px; /* Adjusted margin */
+    color: gold;
+  }
+
+
+
+  .education {
+    padding: 50px 30px;
+    background-color: #242424;
+    color: #fff;
+    text-align: left;
+    opacity: 0; /* Start hidden */
+    transform: translateX(-50px); /* Start with a leftward transform */
+    transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out; /* Add transition for smooth animation */
+    position: relative; /* Added for positioning the lines */
+    margin-top: auto; /* Added to separate sections */
+  }
+
+  .education::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -30px; /* Adjust as needed */
+    width: 2px;
+    height: 100%;
+    background-color: gold; /* Changed line color to gold */
+  }
+
+  .education h3 {
+    margin-top: 20px; /* Adjusted margin */
+  }
+
+  .education h2 {
+    margin-top: 20px; /* Adjusted margin */
+    color: gold;
+  }
+
+  .about h2 {
+    margin-top: 20px; /* Adjusted margin */
+    color: gold;
+  }
+
+  .experience-item {
+    position: relative;
+    margin-bottom: 40px; /* Adjust spacing between experience items */
+  }
+
+  .experience-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -30px; /* Adjust as needed */
+    width: 2px;
+    height: 100%;
+    background-color: gold; /* Changed line color to gold */
+  }
+
+  .experience-item:last-child::before {
+    display: none; /* Hide the last line to prevent extra spacing */
+  }
+
+  .experience-item h3 {
+    margin-top: 10px; /* Adjusted margin */
+    color: gold;
+  }
+
+
+  .education-item {
+    position: relative;
+    margin-bottom: 40px; /* Adjust spacing between experience items */
+  }
+
+  .education-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -30px; /* Adjust as needed */
+    width: 2px;
+    height: 100%;
+    background-color: gold; /* Changed line color to gold */
+  }
+
+  .education-item:last-child::before {
+    display: none; /* Hide the last line to prevent extra spacing */
+  }
+
+  .education-item h3 {
+    margin-top: 10px; /* Adjusted margin */
+    color: gold;
+  }
+
+
+  .about p, .experience p, .education p {
+    font-size: 18px;
+    line-height: 1.6;
+    position: relative; /* Added for positioning the lines */
+    padding-left: 20px; /* Adjust for the space next to the line */
+  }
+
+  .about p::before, .experience p::before, .education p::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0; /* Adjust as needed */
+    width: 2px;
+    height: 100%;
+    background-color: gold; /* Changed line color to gold */
+  }
+
+
+
+  .about h2, .experience h2, .education h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+
+  .skills {
+    padding: 50px 30px;
+    background-color: #242424;
+    color: #fff;
+    text-align: center;
+    opacity: 0; /* Start hidden */
+    transform: translateX(-50px); /* Start with a leftward transform */
+    transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out; /* Add transition for smooth animation */
+  }
+
+  .skill-item {
+    display: inline-block;
+    width: 120px;
+    margin: 20px;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .skill-item i {
+    font-size: 36px;
+    color: #fff;
+    transition: color 0.3s ease;
+  }
+
+  .skill-item p {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+
+  .skill-item:hover i {
+    color: gold;
+  }
+
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 100px 50px;
+    padding: 100px 50px;
+    background-color: #323232;
+    opacity: 0; /* Start hidden */
+    transform: translateX(-50px); /* Start with a leftward transform */
+    transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out; /* Add transition for smooth animation */
+  }
+
+  .container .card {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 35px 80px rgba(0, 0, 0, 0.15);
+    transition: height 0.5s, box-shadow 0.5s;
+
+  }
+
+  .container .card:hover {
+    height: 300px;
+    box-shadow: 0 45px 100px rgba(0, 0, 0, 0.2);
+  }
+
+  .container .card .imgBX {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 110px;
+    height: 110px;
+    background: #333;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: top 0.5s, transform 0.5s, box-shadow 0.5s;
+  }
+
+  .container .card:hover .imgBX {
+    top: -5px;
+    transform: translateX(-50%) scale(0.75);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+  }
+
+  .container .card .imgBX img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  h2 {
+    margin: 0;
+    padding: 0 0 50px;
+    color: #fff;
+    text-align: center;
+  }
+
+  .container .card .content {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    padding: 20px;
+    height: calc(100% - 140px);
+    opacity: 0;
+    visibility: hidden;
+    text-align: center;
+    transition: opacity 0.5s, visibility 0.5s;
+  }
+
+  .container .card:hover .content {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .container .card .content h3 {
+    margin: 10px 0;
+    color: #242424;
+    size: 15px;
+  }
+
+  .container .card .content p {
+    margin: 10px 0;
+    color: black;
+    font-size: 15px;
+  }
+
+  .container .card .content a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 10px;
+    background: #242424;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+  }
+
+  .container .card .content a:hover {
+    background: violet;
+  }
+
+
+
+  .about.visible, .experience.visible, .education.visible, .container.visible, .skills.visible {
+    opacity: 1; /* Fully visible */
+    transform: translateX(0); /* Reset transform */
+  }
+
+
+
+
+
+  @media (max-width: 1024px) {
+    .hero {
+      padding: 50px 30px;
+    }
+    
+    .hero-text h1 {
+      font-size: 40px;
+    }
+    
+    .hero-text h3 {
+      font-size: 35px;
+    }
+  }
+
+
+
+
+  @media (max-width: 768px) {
+    .hero {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .hero img {
+      max-width: 50%; /* Adjusted for smaller screens */
+      margin-top: 20px;
+    }
+
+    .hero-text {
+      max-width: 100%; /* Adjusted for smaller screens */
+      text-align: center;
+    }
+
+    .hero-text h1 {
+      font-size: 30px;
+    }
+
+    .hero-text h3 {
+      font-size: 25px;
+      margin-top: 50px; /* Adjusted for smaller screens */
+    }
+
+    .hero-text h5 {
+      font-size: 16px; /* Adjusted for smaller screens */
+      margin-bottom: 20px;
+    }
+
+    .hero-text p {
+      font-size: 16px; /* Adjusted for smaller screens */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-text h1 {
+      font-size: 24px;
+    }
+    
+    .hero-text h3 {
+      font-size: 20px;
+      margin-top: 30px; /* Adjusted for smaller screens */
+    }
+
+    .hero img {
+      max-width: 70%; /* Adjusted for smaller screens */
+    }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="portfolio-title">Portfolio</div>
+  <nav>
+    <a href="#about" class="nav-link">About</a>
+    <a href="#experience" class="nav-link">Experience</a>
+    <a href="#skills" class="nav-link">Skills</a>
+    <a href="#education" class="nav-link">Certification</a>
+    <a href="#bedges" class="nav-link">Bedges</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="tel:+94775536977">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-text">
+    <h3>Hello, I am</h3>
+    <h1><span>HAROON MOHAMED HIKMATHULLAH</span></h1>
+    <h5>UK Pearson BTEC HND in Network Engineering</h5>
+    <p>Roles: Network Administrator, IT Officer, Network Technician, and Graphic Designer</p>
+    <div class="social-links">
+      <a href="https://github.com/HaroonHikmathHM"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/haroon-hikmath-a035a0195" target="blank"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:haroonhikmath@gmail.com"><i class="fab fa-telegram"></i></a>
+      <a href="https://wa.me/+94775536977" target="blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.bing.com/ck/a?!&&p=50466dfa593cb73bJmltdHM9MTcxOTAxNDQwMCZpZ3VpZD0zOGY3NmQxYS05MzFiLTY4YjktMzE1NC03OTRhOTIxYTY5MjEmaW5zaWQ9NTE3Nw&ptn=3&ver=2&hsh=3&fclid=38f76d1a-931b-68b9-3154-794a921a6921&psq=hikmath+official+instagram&u=a1aHR0cHM6Ly93d3cuaW5zdGFncmFtLmNvbS9oaWttYXRoX29mZmljaWFsLw&ntb=1"><i class="fab fa-instagram"></i></a>
+    </div>
+    <div class="buttons">
+      <a href="Hikmath updated cv.pdf" download="Hikmath updated cv.pdf" target="blank" class="hire-me">Download CV</a>
+      <a href="#" class="portfolio">Portfolio</a>
+    </div>
+  </div>
+  <img src="myphoto.png" alt="Haroon Mohamed Hikmathullah's Photo">
+</section>
+
+<section id="about" class="about">
+  <h2>About Me</h2>
+  <p>I am Haroon Mohammed Hikmathullah, currently pursuing a BTEC HND in Network Engineering. Alongside my studies, I am an IT Assistant at THT PRINTERS, where I leverage my three years of expertise in Graphic Design and comprehensive experience in various networking projects. My immediate goal is to attain CCNA certification, reflecting my dedication to advancing my professional qualifications.</p>
+  <p>With a strong aptitude for rapid learning, I have immersed myself in data science, data analysis, and IoT projects as part of my HND curriculum. A notable project included analyzing a retail store's financial performance using advanced data analysis techniques. I excel in presentation, report writing, critical thinking, and possess excellent communication and organizational skills. My self-motivation, quick learning ability, teamwork, and problem-solving prowess make me a valuable asset in any professional setting.</p>
+</section>
+
+<section id="experience" class="experience">
+  <h2>Professional Experience</h2>
+  <div class="experience-item">
+    <div class="experience-year">Jun 2024 - Present</div>
+    <h3>IT Assistant</h3>
+    <p>THT PRINTERS & Electronics</p>
+    <p>In my role, I manage projects to ensure timely delivery, guide employees in graphic design, printing, and electronics sales, and maintain IT and network infrastructure to ensure reliable performance of computers, network devices, and printers.</p>
+  </div>
+  <div class="experience-item">
+    <div class="experience-year">Feb 2018 - Jul 2021</div>
+    <h3>Graphic Designer</h3>
+    <p>Freelance</p>
+    <p>I successfully completed numerous graphic design projects using Adobe Photoshop, Adobe Illustrator, PageMaker, and Canva. My freelancing experience includes social media marketing, poster designs, cricket t-shirt designs, and cricket bat sticker designs.</p>
+  </div>
+</section>
+
+
+<section id="education" class="education">
+  <h2>Education and Certification</h2>
+  <div class="education-item">
+    <h3>BTEC HND in COMPUTING (Network Engineering)</h3>
+    <p>UK Perason - Bcas Campus</p>
+  </div>
+
+  <div class="education-item">
+    <h3>Advanced Certificate in Cyber Security</h3>
+    <p>Ceylon Campus</p>
+  </div>
+
+  <div class="education-item">
+    <h3>Networking Basics - CCNA</h3>
+    <p>Cisco Networking Academy</p>
+  </div>
+
+  <div class="education-item">
+    <h3>Hardware and Network Troubleshooting</h3>
+    <p>IBM - Coursera</p>
+  </div>
+
+  <div class="education-item">
+    <h3>Web Designing - Short Term Course</h3>
+    <p>South Eastern University of Sri Lanka (SEUSL)</p>
+  </div>
+</section>
+
+
+<div id="bedges" class="container">
+  <div class="card" style="--clr:#009688;">
+    <div class="imgBX">
+      <img src="networking device.png">
+    </div>
+    <div class="content">
+      <h3>Network Configuration</h3>
+      <p>Conducted by Skill for All by Cisco</p>
+      <a href="https://www.credly.com/badges/2cc2f53d-aa2a-4535-a357-b59eacf800c1/public_url">Verify</a>
+    </div>
+  </div>
+
+  <div class="card" style="--clr:#009688;">
+    <div class="imgBX">
+      <img src="networking basics.png">
+    </div>
+    <div class="content">
+      <h3>Networking Basics</h3>
+      <p>Conducted by Skill for All by Cisco</p>
+      <a href="https://www.credly.com/badges/915a4134-78be-485f-90bb-cb05b17b7d94/public_url">Verify</a>
+    </div>
+  </div>
+
+  <div class="card" style="--clr:#009688;">
+    <div class="imgBX">
+      <img src="Hardware.png">
+    </div>
+    <div class="content">
+      <h3>Hardware Troubleshooting</h3>
+      <p>Conducted by IBM through Coursera</p>
+      <a href="https://www.credly.com/badges/fe00d43f-0a08-4941-bb7e-066ae2f0279b/public_url">Verify</a>
+    </div>
+  </div>
+
+  <div class="card" style="--clr:#009688;">
+    <div class="imgBX">
+      <img src="Cybersecurity.png">
+    </div>
+    <div class="content">
+      <h3>Cyber Security</h3>
+      <p>Conducted by Skill for All by Cisco</p>
+      <a href="https://www.credly.com/badges/0004a83e-71d6-454e-8f2a-a6af7de582ec/public_url">Verify</a>
+    </div>
+  </div>
+
+  <div class="card" style="--clr:#009688;">
+    <div class="imgBX">
+      <img src="beginner-python.svg">
+    </div>
+    <div class="content">
+      <h3>Python</h3>
+      <p>Conducted by Microsoft</p>
+      <a href="https://learn.microsoft.com/en-us/users/haroonhikmath-8711/achievements/3x57nkgh">Verify</a>
+    </div>
+  </div>
+
+  <div class="card" style="--clr:#009688;">
+    <div class="imgBX">
+      <img src="equip-support-learners-ai-tools-microsoft.svg">
+    </div>
+    <div class="content">
+      <h3>AI Tools</h3>
+      <p>Conducted by Microsoft</p>
+      <a href="https://learn.microsoft.com/en-us/users/haroonhikmath-8711/achievements/3x57nkgh">Verify</a>
+    </div>
+  </div>
+
+  <div class="card" style="--clr:#009688;">
+    <div class="imgBX">
+      <img src="computer networking.jpeg">
+    </div>
+    <div class="content">
+      <h3>Computer Networking</h3>
+      <p>Conducted by ILLINOIS TECH</p>
+      <a href="https://coursera.org/verify/PHEELS8JD26B">Verify</a>
+    </div>
+  </div>
+</div>
+
+
+<section id="skills" class="skills">
+  <h2>Skills</h2>
+  <div class="skill-item">
+    <i class="fab fa-connectdevelop"></i>
+    <p>Networking</p>
+  </div>
+  <div class="skill-item">
+    <i class="fas fa-shield-alt"></i>
+    <p>Security</p>
+  </div>
+  <div class="skill-item">
+    <i class="fab fa-cloudscale"></i>
+    <p>Cloud Computing</p>
+  </div>
+  <div class="skill-item">
+    <i class="fas fa-desktop"></i>
+    <p>Computer Hardware</p>
+  </div>
+  <div class="skill-item">
+    <i class="fas fa-tools"></i>
+    <p>Troubleshooting</p>
+  </div>
+  <div class="skill-item">
+    <i class="fas fa-network-wired"></i>
+    <p>Network Configuration</p>
+  </div>
+  <div class="skill-item">
+    <i class="fas fa-tasks"></i>
+    <p>Network Management</p>
+  </div>
+  <div class="skill-item">
+    <i class="fas fa-server"></i>
+    <p>SQL</p>
+  </div>
+  <div class="skill-item">
+    <i class="fas fa-paint-brush"></i>
+    <p>Graphic Design</p>
+  </div>
+  <div class="skill-item">
+    <i class="fas fa-keyboard"></i>
+    <p>Data entry</p>
+  </div>
+  <div class="skill-item">
+    <i class="fas fa-project-diagram"></i>
+    <p>Project Management</p>
+  </div>
+  <div class="skill-item">
+    <i class="fas fa-life-ring"></i>
+    <p>IT Support</p>
+  </div>
+  <div class="skill-item">
+    <i class="fab fa-python"></i>
+    <p>Python</p>
+  </div>
+  <div class="skill-item">
+    <i class="fab fa-html5"></i>
+    <p>HTML</p>
+  </div>
+  <div class="skill-item">
+    <i class="fab fa-css3-alt"></i>
+    <p>CSS</p>
+  </div>
+  <div class="skill-item">
+    <i class="fab fa-sketch"></i>
+    <p>Adobe Photoshop</p>
+  </div>
+  <div class="skill-item">
+    <i class="fab fa-pen"></i>
+    <p>Adobe Illustrator</p>
+  </div>
+  <div class="skill-item">
+    <i class="fab fa-microsoft"></i>
+    <p>MS Office</p>
+  </div>
+  <div class="skill-item">
+    <i class="fas fa-chart-line"></i>
+    <p>Data Analysis</p>
+  </div>
+  <div class="skill-item">
+    <i class="fas fa-file-alt"></i>
+    <p>Presentation</p>
+  </div>
+  <div class="skill-item">
+    <i class="fas fa-file-signature"></i>
+    <p>Report Writing</p>
+  </div>
+  <div class="skill-item">
+    <i class="fas fa-rocket"></i>
+    <p>Quick Learning</p>
+  </div>
+  <div class="skill-item">
+    <i class="fas fa-lightbulb"></i>
+    <p>Problem solving</p>
+  </div>
+  <div class="skill-item">
+    <i class="fas fa-heart"></i>
+    <p>Self motivated</p>
+  </div>
+  <div class="skill-item">
+    <i class="fas fa-brain"></i>
+    <p>Critical thinking</p>
+  </div>
+</section>
+
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('.about, .experience, .skills, .education, .container');
+
+    // Function to handle scrolling to a section and adding the visible class
+    const handleNavClick = (event, targetId) => {
+      event.preventDefault();
+      const targetSection = document.querySelector(targetId);
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+      targetSection.classList.add('visible');
+    };
+
+    // Add click event listeners to navigation links
+    navLinks.forEach(link => {
+      link.addEventListener('click', function(event) {
+        const targetId = this.getAttribute('href');
+        handleNavClick(event, targetId);
+      });
+    });
+
+    // Intersection Observer callback
+    const observerCallback = (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        } else {
+          entry.target.classList.remove('visible');
+        }
+      });
+    };
+
+    // Intersection Observer options
+    const observerOptions = {
+      threshold: 0.1
+    };
+
+    // Create an Intersection Observer instance
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    // Observe each section
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  });
+</script>
+
+</body>
+</html>
+
+
